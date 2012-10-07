@@ -10,17 +10,17 @@ interactive web forms. Check it out!
 Trying WebSciPy
 --------------------------
 
-Download the code and run:
-   
-   $ python test.py
-   http://0.0.0.0:8080/
+Download the code and run::
+
+ $ python test.py
+ http://0.0.0.0:8080/
 
 This should tell you the website to visit. Try the FFT and square root demo programs:
 
-.. figure:: doc/example.png
-   :scale: 66 %
-   
-   The FFT demo program features interactive sliders and plotting capabilities.
+.. figure:: sinexample.png
+ :scale: 66 %
+
+ The FFT demo program features interactive sliders and plotting capabilities.
 
 Hacking WebSciPy
 --------------------------
