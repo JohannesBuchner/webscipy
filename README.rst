@@ -17,7 +17,7 @@ Download the code and run::
 
 This should tell you the website to visit. Try the FFT and square root demo programs:
 
-.. figure:: http://raw.github.com/JohannesBuchner/webscipy/master/sinexample.png
+.. figure:: https://raw.github.com/JohannesBuchner/webscipy/master/sinexample.png
  :scale: 66 %
 
  The FFT demo program features interactive sliders and plotting capabilities.
