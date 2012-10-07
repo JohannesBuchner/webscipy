@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Webscipy by JohannesBuchner</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/JohannesBuchner/webscipy">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Webscipy</h1>
+            <h2>Interactive web pages  for scientific computing with python</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/JohannesBuchner/webscipy/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/JohannesBuchner/webscipy/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <p>WebSciPy allows you to make interactive web demos of scientific problems by 
+connecting your scipy/numpy code and matplotlib plots with user-friendly, 
+interactive web forms. Check it out!</p>
+
+<h2>Trying WebSciPy</h2>
+
+<p>Download the code and run::</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>python test.py
+http://0.0.0.0:8080/
+</pre></div>
+
+<p>This should tell you the website to visit. Try the FFT and square root demo programs:</p>
+
+<p><img src="https://raw.github.com/JohannesBuchner/webscipy/master/sinexample.png" alt="FFT"></p>
+
+<p>The FFT demo program features interactive sliders and plotting capabilities.</p>
+
+<h2>Hacking WebSciPy</h2>
+
+<p>Download and fork this project on github. Put your own demo cases in your repo!</p>
+
+<p>Open test.py. You find the routes that connect URLs with classes.
+The sqrt class shows the minimal use case of connecting a input form to some calculations.
+You will write a similar class for your code, then connect it in the routes.</p>
+
+<p>A more elaborate example, with scipy libraries and matplotlib plotting is the sin class.</p>
+
+<p>WebSciPy is built on web.py, so look at <a href="http://webpy.org/">their documentation</a>. And of course, some knowledge of HTML, CSS, and Javascript (JQuery) is useful.</p>
+
+<p>In WebSciPy you can use all the python libraries installed on your machine.</p>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/JohannesBuchner">JohannesBuchner</a> can be found on <a href="https://github.com/JohannesBuchner/webscipy">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
