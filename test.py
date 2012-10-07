@@ -30,6 +30,7 @@ class sin:
 		if hasattr(i, "freq") and hasattr(i, "ampl") and hasattr(i, "phase") and hasattr(i, "offset") and hasattr(i, "noise"):
 			import hashlib
 			import scipy, numpy, scipy.fftpack
+			from numpy import pi
 			import matplotlib.pyplot as plt
 			
 			x = numpy.linspace(0,1,100)
@@ -39,7 +40,7 @@ class sin:
 			i.offset = float(i.offset)
 			i.phase = float(i.phase)
 			i.noise = float(i.noise)
-			y = i.offset + i.ampl * numpy.sin(i.freq * x + i.phase / 180. * numpy.pi)
+			y = i.offset + i.ampl * numpy.sin(i.freq * x + i.phase / 180. * pi)
 			if i.noise > 0:
 				y = scipy.random.normal(y, i.noise)
 			
@@ -52,8 +53,8 @@ class sin:
 			
 			p = scipy.fftpack.fft(y)
 			n = len(p)/2
-			p = p[:n]**2
-			f = numpy.arange(len(p)) * 1. / len(x)
+			p = numpy.abs(p[:n]**2)
+			f = numpy.arange(len(p)) * 1. * len(x) / len(p) / 2 * 2 * pi
 			plt.plot(f, p, '+')
 			plt.xlabel("frequency")
 			plt.ylabel("power")
