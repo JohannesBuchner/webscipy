@@ -1,0 +1,25 @@
+  <script>
+  $$(document).ready(function() {
+    $$(".slider").slider({ max: 10000, min: 1, 
+    slide: function(event, ui) {
+       $$("#textvalue").val(ui.value);
+       $$("#calcform").submit()
+    }, value: $$("#textvalue").val()
+    });
+  });
+  </script>
+</head>
+<body>
+<div class="control">
+<form target="calc" id="calcform" method="GET">
+<label><h4>Value:</h4>
+<input name="value" id="textvalue" value="1600" onKeyUp="submit()" size=5></input>
+<div class="slider"></div>
+</label>
+<hr class="clearer" />
+<input type="submit" value="run">
+</form>
+</div>
+
+<iframe name="calc" class="calc"></iframe>
+</body>

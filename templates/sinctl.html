@@ -1,0 +1,72 @@
+   <style type="text/css">
+    .slider { 
+       margin: 10px;
+    }
+    hr.clearer {
+    	clear: both;
+    	border: none;
+    }
+  </style>
+  <script>
+  
+  updatefunc = function(txtui) {
+    return function(event, ui) {
+       txtui.val(ui.value);
+       $$("#calcform").submit()
+    };
+  };
+  link = function(sliderui, txtui) {
+    sliderui.slider( "option", "value", txtui.val() );
+    sliderui.bind( "slide", updatefunc(txtui) );
+  }
+  $$(document).ready(function() {
+    $$("#slidefreq").slider({ min: 0.1, step: 0.1, max: 100});
+    $$("#slideampl").slider({ min: 0.1, step: 0.1, max: 1});
+    $$("#slidephase").slider({ min: 0, step: 1, max: 360});
+    $$("#slideoffset").slider({ min: -1, step: 0.1, max: 1});
+    $$("#slidenoise").slider({ min: 0, step: 0.1, max: 1});
+    link($$("#slidefreq"), $$("#textfreq"));
+    link($$("#slideampl"), $$("#textampl"));
+    link($$("#slidephase"), $$("#textphase"));
+    link($$("#slideoffset"), $$("#textoffset"));
+    link($$("#slidenoise"), $$("#textnoise"));
+  });
+  </script>
+</head>
+<body>
+
+<div class="control">
+<form target="calc" id="calcform" method="GET">
+
+<label><h4>Frequency:</h4>
+<input name="freq" id="textfreq" value="40" onKeyUp="submit()" size=5></input>
+<div class="slider" id="slidefreq"></div>
+</label>
+
+<label><h4>Amplitude:</h4>
+<input name="ampl" id="textampl" value="1" onKeyUp="submit()" size=5></input>
+<div class="slider" id="slideampl"></div>
+</label>
+
+<label><h4>Phase:</h4>
+<input name="phase" id="textphase" value="0" onKeyUp="submit()" size=5></input>
+<div class="slider" id="slidephase"></div>
+</label>
+
+<label><h4>Offset:</h4>
+<input name="offset" id="textoffset" value="0" onKeyUp="submit()" size=5></input>
+<div class="slider" id="slideoffset"></div>
+</label>
+
+<label><h4>Noise:</h4>
+<input name="noise" id="textnoise" value="0.1" onKeyUp="submit()" size=5></input>
+<div class="slider" id="slidenoise"></div>
+</label>
+
+<hr class="clearer" />
+<input type="submit" value="run">
+</form>
+</div>
+
+<iframe name="calc" class="calc"></iframe>
+</body>
